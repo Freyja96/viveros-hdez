@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Formulario de Validación -->
+    <main class="container my-5" style="max-width: 500px;">
+        <form id="contact-form" class="card p-4 shadow-sm needs-validation" novalidate>
+            <h2 class="mb-4">Contacta con nosotros</h2>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" id="name" class="form-control" required minlength="3">
+                <div class="invalid-feedback">El nombre debe tener al menos 3 caracteres.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" class="form-control" required>
+                <div class="invalid-feedback">Por favor, introduce un email válido.</div>
+            </div>
+
+            <fieldset>
+                <legend class="form-label">Motivo:</legend>
+                <div>
+                    <input type="radio" id="motivo" class="form-control" required>
+                    <label for="motivo">Felicitación</label>
+                    <input type="radio" id="motivo" class="form-control" required>
+                    <label for="motivo">Posible mejora</label>
+                    <input type="radio" id="motivo" class="form-control" required>
+                    <label for="motivo">Reclamación</label>
+                    <input type="radio" id="motivo" class="form-control" required>
+                    <label for="motivo">Error</label>
+                </div>
+                <div class="invalid-feedback">Por favor, introduce el motivo de contacto.</div>
+            </fieldset>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje:</label>
+                <textarea id="message" class="form-control" required>
+                <div class="invalid-feedback">¿Qué necesitas contarnos?</div>
+            </div>
+
+            <!-- si es un error en la web, que deje adjuntar una imagen del error -->
+
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+    </main>
+</body>
+
+</html>
