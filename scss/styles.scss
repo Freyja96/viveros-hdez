@@ -19,62 +19,7 @@ sans-serif;
 
 $card-width: 300px;
 
-/*-----------------------------Estilos globales-----------------------------*/
-
-body {
-    background-color: $background-color;
-}
-
-header {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 65%, rgba(247, 244, 237, 1) 100%);
-    height: 68px;
-    /*se establece la altura del header para que no se vea cortado el contenido*/
-}
-
-
-/*Producto*/
-
-.text-truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-article {
-    width: $card-width;
-    height: 450px;
-    img {
-        width: $card-width;
-        height: 230px;
-        object-fit: cover;
-        object-position: center center;
-    }
-    .card-price {
-        font-size: $price-font-size;
-        color: $primary-color;
-    }
-}
-
-#header-content {
-    height: 48px;
-    button {
-        height: 30px;
-    }
-}
-
-#logo {
-    width: 40px;
-    height: 40px;
-}
-
-@media (min-width: 768px) {
-    #input-search {
-        width: 400px;
-    }
-}
-
-.search-bar-item {
-    background-color: $search-bar-color;
-}
+/*-----------------------------Botones-----------------------------*/
 
 .btn-primary {
     background-color: $primary-color;
@@ -100,6 +45,74 @@ article {
     border-color: $secondary-color !important;
 }
 
+
+/*-----------------------------Estilos globales-----------------------------*/
+
+body {
+    background-color: $background-color;
+}
+
+@media (min-width: 768px) {
+    #input-search {
+        width: 400px;
+    }
+}
+
+
+/*-----------------------------Header-----------------------------*/
+
+header {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 65%, rgba(247, 244, 237, 1) 100%);
+    /*se establece la altura del header para que no se vea cortado el contenido*/
+    height: 85px;
+    form button,
+    #logo,
+    .bi {
+        width: 40px;
+        height: 40px;
+    }
+    #input-search,
+    .btn {
+        height: 40px;
+    }
+    .search-bar-item {
+        background-color: $search-bar-color;
+    }
+}
+
+
+/*Producto*/
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+article {
+    width: $card-width;
+    height: 450px;
+    img {
+        width: $card-width;
+        height: 230px;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .card-price {
+        font-size: $price-font-size;
+        color: $primary-color;
+    }
+}
+
 .product-card {
     background-color: white;
+}
+
+
+/*---------------------Aside-------------------------*/
+
+
+/*position-sticky sticky-top*/
+
+aside {
+    height: max-content;
 }

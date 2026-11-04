@@ -5,33 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viveros Hernandez</title>
-    <link rel="stylesheet" href="scss/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="">
-        <div id="header-content" class="d-inline-flex w-100 m-0 pt-2 justify-content-center">
-            <div class="d-flex col-1">
-                <img src="img/logo.png" id="logo" alt="logo">
-            </div>
-            <div id="search-bar" class="d-flex col-8 justify-content-center">
-                <search>
-                    <form action="" class="d-flex">
-                        <button id="btn-burger" class="search-bar-item border-0 rounded-start" alt="menú desplegable">
-                            <img src="img/burger.png" width="30" height="30">
-                        </button>
-                        <input id="input-search" type="text" placeholder="Buscar" class="search-bar-item border-0">
-                        <button id="btn-search" class="search-bar-item border-0 rounded-end" alt="botón de búsqueda">
-                            <img src="img/lupa.png" width="30" height="30">
-                        </button>
-                    </form>
-                </search>
-            </div>
-            <div class="d-flex">
-                <button class="btn btn-secondary rounded-end-0">Iniciar sesión</button>
-                <button class="btn btn-primary rounded-start-0">Registro</button>
-            </div>
+    <header id="header-content" class="m-0 d-inline-flex w-100 m-0 pt-2 justify-content-center">
+        <div class="d-flex col-1">
+            <img src="img/logo.png" id="logo" alt="logo">
         </div>
+        <div id="search-bar" class="d-flex col-8 justify-content-center">
+            <search>
+                <form action="" class="d-flex">
+                    <button id="btn-burger" class="search-bar-item border-0 rounded-start-pill" alt="menú desplegable">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <!--TODO Meter validación de formulario a la barra de búsqueda-->
+                    <input id="input-search" type="text" placeholder="Buscar" class="search-bar-item border-0">
+                    <button id="btn-search" class="search-bar-item border-0 rounded-end-pill" alt="botón de búsqueda">
+                        <i class="bi bi-search-heart"></i>
+                    </button>
+                </form>
+            </search>
+        </div>
+        <div class="d-flex">
+            <button class="btn btn-secondary rounded-end-0">Iniciar sesión</button>
+            <button class="btn btn-primary rounded-start-0">Registro</button>
+        </div>
+
     </header>
     <main>
         <img src="img/index.jpeg" alt="VIVEROS HERNÁNDEZ. Cultivando belleza, desde 1985" width="100%" class="m-0">
@@ -82,7 +83,7 @@
                 </section>
             </div>
             <div class="col-3">
-                <aside>
+                <aside class="position-sticky sticky-top mt-5">
                     <a href="">
                         <img src="img/add.jpeg" alt="anuncio" class="img-fluid shadow-sm rounded">
                     </a>
