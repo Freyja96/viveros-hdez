@@ -170,6 +170,9 @@ footer{
 /*---------------------------Aside-------------------------------*/
 /*sticky-top para que el anuncio te siga al hacer scroll.
 Se establece un margen superior para que se vea más centrado*/
+main > img {
+    width: 100%;
+}
 aside {
     height: max-content;
     a img:hover {
