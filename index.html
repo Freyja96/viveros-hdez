@@ -10,29 +10,65 @@
 </head>
 
 <body>
-    <header id="header-content" class="m-0 d-inline-flex w-100 m-0 pt-2 justify-content-center">
-        <div class="d-flex col-1">
-            <img src="img/logo.png" id="logo" alt="logo">
+    <header id="header-content" class="m-0 d-inline-flex w-100 pt-2 justify-content-center align-items-center">
+        <!-- Logo -->
+        <div class="d-flex col-1 justify-content-center">
+            <a href="index.html">
+                <img src="img/logo.png" id="logo" alt="logo">
+            </a>
         </div>
+
+        <!-- Barra de búsqueda -->
         <div id="search-bar" class="d-flex col-8 justify-content-center">
-            <search>
-                <form action="" class="d-flex">
-                    <button id="btn-burger" class="search-bar-item border-0 rounded-start-pill" alt="menú desplegable">
-                        <i class="bi bi-list"></i>
-                    </button>
+            <search class="w-100">
+                <form action="" class="d-flex align-items-center justify-content-center">
+                    <!-- Desplegables de Categorías (Uno para versión móvil y otro para versión escritorio) -->
+                    <div id="dropdown-menu-sm" class="dropdown">
+                        <button id="btn-burger" type="button" class="d-flex align-items-center search-bar-item border-0 rounded-start-pill px-3 btn btn-secondary text-black" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btn-categories">
+                            <a class="dropdown-item" href="#">Todas las categorías</a>
+                            <a class="dropdown-item" href="#">Plantas de interior</a>
+                            <a class="dropdown-item" href="#">Plantas de exterior</a>
+                            <a class="dropdown-item" href="#">Semillas</a>
+                            <a class="dropdown-item" href="#">Sustratos y abonos</a>
+                        </div>
+                    </div>
+                    <div id="dropdown-menu-lg" class="dropdown">
+                        <button id="btn-categories" type="button" class="search-bar-item border-0 rounded-start-pill fw-bold px-3 btn btn-secondary dropdown-toggle text-black" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorías
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="btn-categories">
+                            <a class="dropdown-item" href="#">Todas las categorías</a>
+                            <a class="dropdown-item" href="#">Plantas de interior</a>
+                            <a class="dropdown-item" href="#">Plantas de exterior</a>
+                            <a class="dropdown-item" href="#">Semillas</a>
+                            <a class="dropdown-item" href="#">Sustratos y abonos</a>
+                        </div>
+                    </div>
+
                     <!--TODO Meter validación de formulario a la barra de búsqueda-->
-                    <input id="input-search" type="text" placeholder="Buscar" class="search-bar-item border-0">
-                    <button id="btn-search" class="search-bar-item border-0 rounded-end-pill" alt="botón de búsqueda">
+                    <input id="input-search" type="text" placeholder="Buscar" class="search-bar-item border-0" aria-label="Campo de búsqueda">
+                    <button id="btn-search" class="d-flex align-items-center search-bar-item border-0 rounded-end-pill px-3 btn btn-secondary text-black" type="submit">
                         <i class="bi bi-search-heart"></i>
                     </button>
                 </form>
             </search>
         </div>
-        <div class="d-flex">
-            <button class="btn btn-secondary rounded-end-0">Iniciar sesión</button>
-            <button class="btn btn-primary rounded-start-0">Registro</button>
-        </div>
 
+        <!-- Botones de sesión / login -->
+        <div id="login" class="p-0 m-0 d-flex align-items-center">
+            <button class="btn btn-secondary rounded-circle p-0 d-flex align-items-center justify-content-center">
+                <i class="bi bi-person-circle"></i>
+            </button>
+            <button class="btn btn-secondary rounded-end-0 px-3">
+                Iniciar sesión
+            </button>
+            <button class="btn btn-primary rounded-start-0 px-3">
+                Registro
+            </button>
+        </div>
     </header>
     <main>
         <img src="img/index.jpeg" alt="VIVEROS HERNÁNDEZ. Cultivando belleza, desde 1985" width="100%" class="m-0">
@@ -41,61 +77,99 @@
                 <section id="best-sold">
                     <h3 class="mb-0 ps-5 pt-3">Lo más vendido</h3>
                     <div class="d-flex flex-wrap justify-content-center">
-                        <article class="product-card rounded shadow-sm m-5">
-                            <!--TODO: typescript meter alt con el nombre del producto-->
-                            <img class="rounded-top img-card" src="img/aloe-vera.png" alt="" width="100" height="100">
-                            <p class="p-3 pb-0 mb-1 card-title">Aloe vera</p>
-                            <p class="px-3 fw-bold card-price">14,99€</p>
-                            <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
-                        </article>
-                        <article class="product-card rounded shadow-sm m-5">
-                            <img class="rounded-top img-card" src="img/arbol-jade.png" alt="" width="100" height="100">
-                            <p class="p-3 pb-0 mb-1">Árbol de jade</p>
-                            <p class="px-3 fw-bold card-price">21,50€</p>
-                            <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
-                        </article>
-                        <article class="product-card rounded shadow-sm m-5">
-                            <img class="rounded-top img-card" src="img/monstera.png" alt="" width="100" height="100">
-                            <p class="p-3 pb-0 mb-1 card-title">Monstera</p>
-                            <p class="px-3 fw-bold card-price">135,65€</p>
-                            <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
-                        </article>
-                        <article class="product-card rounded shadow-sm m-5">
-                            <img class="rounded-top" src="img/cactus.png" alt="" width="100" height="100">
-                            <p class="p-3 pb-0 mb-1 card-title">Cactus</p>
-                            <p class="px-3 fw-bold card-price">5,45€</p>
-                            <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
-                        </article>
-                        <article class="product-card rounded shadow-sm m-5">
-                            <img class="rounded-top img-card" src="img/azalea.png" alt="" width="100" height="100">
-                            <p class="p-3 pb-0 mb-1 card-title">Azalea</p>
-                            <p class="px-3 fw-bold card-price">25,95€</p>
-                            <p class="px-3 pt-0 mb-0 text-truncate card-description">Dale vida a tu espacio con la Azalea, una planta de floración abundante y colores vibrantes. Es perfecta tanto para terrazas y balcones como para interiores luminosos, destacando por su elegancia natural y su capacidad para
-                                transformar cualquier rincón.</p>
-                        </article>
-                        <article class="product-card rounded shadow-sm m-5">
-                            <img class="rounded-top" src="img/lila.jpg" alt="" width="100" height="100">
-                            <p class="p-3 pb-0 mb-1 card-title">Lila</p>
-                            <p class="px-3 fw-bold card-price">14,95€</p>
-                            <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
-                        </article>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <!--TODO: typescript meter aria-label con el nombre del producto-->
+                                <img class="rounded-top img-card" src="img/aloe-vera.png" alt="Aloe vera" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Aloe vera</p>
+                                <p class="px-3 fw-bold card-price">14,99€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
+                            </article>
+                        </a>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <img class="rounded-top img-card" src="img/arbol-jade.png" alt="Árbol de jade" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Árbol de jade</p>
+                                <p class="px-3 fw-bold card-price">21,50€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
+                            </article>
+                        </a>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <img class="rounded-top img-card" src="img/ficus.png" alt="Ficus" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Ficus</p>
+                                <p class="px-3 fw-bold card-price">35,99€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
+                            </article>
+                        </a>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <img class="rounded-top img-card" src="img/monstera.png" alt="Monstera" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Monstera</p>
+                                <p class="px-3 fw-bold card-price">135,65€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
+                            </article>
+                        </a>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <img class="rounded-top img-card" src="img/cactus.png" alt="Cactus" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Cactus</p>
+                                <p class="px-3 fw-bold card-price">5,45€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
+                            </article>
+                        </a>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <img class="rounded-top img-card" src="img/azalea.png" alt="Azalea" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Azalea</p>
+                                <p class="px-3 fw-bold card-price">25,95€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Dale vida a tu espacio con la Azalea, una planta de floración abundante y colores vibrantes. Es perfecta tanto para terrazas y balcones como para interiores luminosos, destacando por su elegancia natural y su capacidad para
+                                    transformar cualquier rincón.</p>
+                            </article>
+                        </a>
+                        <a href="" class="text-decoration-none text-black">
+                            <article class=" rounded shadow-sm mx-5 my-4">
+                                <img class="rounded-top img-card" src="img/lila.jpg" alt="Lila" width="100" height="100">
+                                <p class="p-3 pb-0 mb-1 card-title">Lila</p>
+                                <p class="px-3 fw-bold card-price">14,95€</p>
+                                <p class="px-3 pt-0 mb-0 text-truncate card-description">Planta suculenta de fácil cuidado, ideal para interiores y exteriores.</p>
+                            </article>
+                        </a>
                     </div>
                 </section>
             </div>
             <div class="col-3">
                 <aside class="position-sticky sticky-top mt-5">
                     <a href="">
-                        <img src="img/add.jpeg" alt="anuncio" class="img-fluid shadow-sm rounded">
+                        <img src="img/add.jpeg" alt="anuncio" class="img-fluid shadow-sm rounded mt-4">
                     </a>
                 </aside>
             </div>
         </div>
     </main>
-    <footer>
-        <a href="">Sobre nosotros</a>
-        <a href="">Contacta con nosotros</a>
+    <footer class="d-flex justify-content-center align-items-center p-3 flex-wrap">
+        <a href="">
+            <i class="bi bi-facebook text-white fs-5 p-2"></i>
+        </a>
+        <a href="">
+            <i class="bi bi-instagram text-white fs-5 p-2"></i>
+        </a>
+        <a href="">
+            <i class="bi bi-tiktok text-white fs-5 p-2"></i>
+        </a>
+        <a href="">
+            <i class="bi bi-twitter text-white fs-5 p-2 pe-5"></i>
+        </a>
+
+        <a href="sobre-nosotros.html" class="text-white p-5">Sobre nosotros</a>
+
+        <a href="contacto.html" class="text-white p-5">Contacta con nosotros</a>
     </footer>
-    <script></script>
+    <!-- REFERENCIAS LOCALES -->
+    <!-- 1. JS de Bootstrap (Asegúrate de usar bootstrap.bundle.js para incluir Popper.js, necesario para dropdowns) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- 2. Tu script de lógica personalizada -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

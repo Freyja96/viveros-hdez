@@ -11980,19 +11980,24 @@ textarea.form-control-lg {
   }
 }
 /*-----------------------------Colores-----------------------------*/
-/*-----------------------------Tipografías-----------------------------*/
-/*Variables globales*/
+/*---------------------------Tipografías---------------------------*/
+/*-----------------------Variables globales-----------------------*/
 /*-----------------------------Botones-----------------------------*/
 .btn-primary {
   background-color: #4D367D;
   color: white;
   border-color: #4D367D !important;
 }
-
 .btn-primary:hover {
   background-color: #2E1B57;
   color: white;
   border-color: #2E1B57 !important;
+  transition: transform 0.3s ease-in-out;
+}
+.btn-primary:active {
+  background-color: #4D367D;
+  color: white;
+  border-color: #4D367D !important;
 }
 
 .btn-secondary {
@@ -12000,44 +12005,87 @@ textarea.form-control-lg {
   color: white;
   border-color: #A18FD4 !important;
 }
-
 .btn-secondary:hover {
   background-color: #C4AFFE;
   color: white;
   border-color: #C4AFFE !important;
+  transition: transform 0.3s ease-in-out;
+}
+.btn-secondary:active {
+  background-color: #A18FD4;
+  color: white;
+  border-color: #A18FD4 !important;
 }
 
-/*-----------------------------Estilos globales-----------------------------*/
+/*------------------------Estilos globales------------------------*/
 body {
   background-color: #F7F4ED;
 }
 
+.form-control:focus {
+  outline: #C4AFFE !important;
+}
+
 @media (min-width: 768px) {
+  #dropdown-menu-sm {
+    display: none !important;
+  }
+  #login .rounded-circle, #login i {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  #dropdown-menu-lg {
+    display: none !important;
+  }
+  #login .rounded-end-0, #login .rounded-start-0 {
+    display: none !important;
+  }
   #input-search {
-    width: 400px;
+    width: 100px !important;
   }
 }
 /*-----------------------------Header-----------------------------*/
 header {
-  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 65%, rgb(247, 244, 237) 100%);
-  /*se establece la altura del header para que no se vea cortado el contenido*/
-  height: 85px;
-}
-header form button,
-header #logo,
-header .bi {
-  width: 40px;
-  height: 40px;
-}
-header #input-search,
-header .btn {
-  height: 40px;
+  /*Background con degradado para que vaya del blanco al beige de la página.
+  Se establece la altura del header para que no se vea cortado el contenido*/
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 85%, rgb(247, 244, 237) 100%);
+  height: 95px;
 }
 header .search-bar-item {
   background-color: #F4F0FF;
 }
+header {
+  /*Se establece el alto de todos los componentes del header para que se vean alineados.
+  Utilizo !important para asegurar que los estilos se aplican correctamente y no utilizan la configuración de bootstrap*/
+}
+header #btn-categories, header #btn-search, header #btn-burger,
+header #logo,
+header #input-search,
+header .btn,
+header .bi {
+  min-width: 40px !important;
+  height: 40px !important;
+}
+header i {
+  font-size: 1.5rem !important;
+}
+header .dropdown-menu {
+  border-radius: 12px;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+header .dropdown-menu .dropdown-item {
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+header .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(77, 54, 125, 0.1);
+  color: #4D367D;
+}
 
-/*Producto*/
+/*-----------------------------Producto-----------------------------*/
 .text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -12046,6 +12094,7 @@ header .search-bar-item {
 article {
   width: 300px;
   height: 450px;
+  background-color: white;
 }
 article img {
   width: 300px;
@@ -12059,14 +12108,32 @@ article .card-price {
   font-size: 1.2rem;
   color: #4D367D;
 }
-
-.product-card {
-  background-color: white;
+article:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
 }
 
-/*---------------------Aside-------------------------*/
-/*position-sticky sticky-top*/
+/*-----------------------------Footer-----------------------------*/
+footer {
+  background-color: #4D367D;
+}
+
+/*-----------------------------pantalla inicio-----------------------------*/
+/*---------------------------Aside-------------------------------*/
+/*sticky-top para que el anuncio te siga al hacer scroll.
+Se establece un margen superior para que se vea más centrado*/
 aside {
   height: -moz-max-content;
   height: max-content;
+}
+aside a img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/*-----------------------------pantalla contacto-----------------------------*/
+textarea {
+  height: 100px;
 }/*# sourceMappingURL=styles.css.map */

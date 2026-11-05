@@ -9,15 +9,16 @@ $secondary-color-hover: #A18FD4;
 $background-color: #F7F4ED;
 $search-bar-color: #F4F0FF;
 
-/*-----------------------------Tipografías-----------------------------*/
+/*---------------------------Tipografías---------------------------*/
 
 $price-font-size: 1.2rem;
 $price-font-family: montserrat,
 sans-serif;
 
-/*Variables globales*/
+/*-----------------------Variables globales-----------------------*/
 
 $card-width: 300px;
+
 
 /*-----------------------------Botones-----------------------------*/
 
@@ -25,63 +26,110 @@ $card-width: 300px;
     background-color: $primary-color;
     color: white;
     border-color: $primary-color !important;
-}
-
-.btn-primary:hover {
-    background-color: $primary-color-hover;
-    color: white;
-    border-color: $primary-color-hover !important;
+    &:hover {
+        background-color: $primary-color-hover;
+        color: white;
+        border-color: $primary-color-hover !important;
+        transition: transform 0.3s ease-in-out;
+    }
+    &:active {
+        background-color: $primary-color;
+        color: white;
+        border-color: $primary-color !important;
+    }
 }
 
 .btn-secondary {
     background-color: $secondary-color-hover;
     color: white;
     border-color: $secondary-color-hover !important;
+    &:hover {
+        background-color: $secondary-color;
+        color: white;
+        border-color: $secondary-color !important;
+        transition: transform 0.3s ease-in-out;
+    }
+    &:active {
+        background-color: $secondary-color-hover;
+        color: white;
+        border-color: $secondary-color-hover !important;
+    }
 }
 
-.btn-secondary:hover {
-    background-color: $secondary-color;
-    color: white;
-    border-color: $secondary-color !important;
-}
 
-
-/*-----------------------------Estilos globales-----------------------------*/
+/*------------------------Estilos globales------------------------*/
 
 body {
     background-color: $background-color;
 }
 
-@media (min-width: 768px) {
-    #input-search {
-        width: 400px;
-    }
+.form-control:focus { //TODO: no me hace caso, tengo que mirar cómo hacerlo
+    outline: $secondary-color !important;
 }
 
+@media (min-width: 768px) {
+    #dropdown-menu-sm {
+        display: none !important;
+    }
+    #login .rounded-circle, #login i {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    #dropdown-menu-lg {
+        display: none !important;
+    }
+    #login .rounded-end-0, #login .rounded-start-0 {
+        display: none !important;
+    }
+    #input-search {
+        width: 100px !important;
+    }
+}
 
 /*-----------------------------Header-----------------------------*/
 
 header {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 65%, rgba(247, 244, 237, 1) 100%);
-    /*se establece la altura del header para que no se vea cortado el contenido*/
-    height: 85px;
-    form button,
-    #logo,
-    .bi {
-        width: 40px;
-        height: 40px;
-    }
-    #input-search,
-    .btn {
-        height: 40px;
-    }
+    /*Background con degradado para que vaya del blanco al beige de la página.
+    Se establece la altura del header para que no se vea cortado el contenido*/
+    //TODO: Hacer que quede más centrado
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 85%, rgba(247, 244, 237, 1) 100%);
+    height: 95px;
     .search-bar-item {
         background-color: $search-bar-color;
+    }
+    /*Se establece el alto de todos los componentes del header para que se vean alineados.
+    Utilizo !important para asegurar que los estilos se aplican correctamente y no utilizan la configuración de bootstrap*/
+    #btn-categories, #btn-search, #btn-burger,
+    #logo,
+    #input-search,
+    .btn,
+    .bi {
+        min-width: 40px !important;
+        height: 40px !important;
+    }
+    i {
+        font-size: 1.5rem !important;
+    }
+    .dropdown-menu {
+        border-radius: 12px;
+        padding: 0.5rem;
+        background-color: #fff;
+        .dropdown-item {
+            border-radius: 6px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
+            
+            &:hover {
+                background-color: rgba($primary-color, 0.1);
+                color: $primary-color;
+            }
+        }
     }
 }
 
 
-/*Producto*/
+/*-----------------------------Producto-----------------------------*/
 
 .text-truncate {
     overflow: hidden;
@@ -91,6 +139,7 @@ header {
 article {
     width: $card-width;
     height: 450px;
+    background-color: white;
     img {
         width: $card-width;
         height: 230px;
@@ -101,18 +150,38 @@ article {
         font-size: $price-font-size;
         color: $primary-color;
     }
+    &:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+    }
 }
 
-.product-card {
-    background-color: white;
+/*-----------------------------Footer-----------------------------*/
+
+footer{
+    background-color: $primary-color;
 }
 
 
-/*---------------------Aside-------------------------*/
+// TODO: Pendiente poner en scss separados
+/*-----------------------------pantalla inicio-----------------------------*/
 
-
-/*position-sticky sticky-top*/
-
+/*---------------------------Aside-------------------------------*/
+/*sticky-top para que el anuncio te siga al hacer scroll.
+Se establece un margen superior para que se vea más centrado*/
 aside {
     height: max-content;
+    a img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) !important;
+    }
+}
+
+
+/*-----------------------------pantalla contacto-----------------------------*/
+
+textarea {
+    height: 100px;
 }
